@@ -4,12 +4,14 @@ import { Route, Routes, Navigate, useNavigate, useParams } from "react-router-do
 import MovieList from './components/MovieList';
 import Movie from './components/Movie';
 import EditMovieForm from './components/EditMovieForm'
+import AddMovieForm from "./components/AddMovieForm";
 
 import MovieHeader from './components/MovieHeader';
 
 import FavoriteMovieList from './components/FavoriteMovieList';
 
 import axios from 'axios';
+
 
 const App = (props) => {
   const navigate = useNavigate
@@ -60,6 +62,7 @@ const App = (props) => {
             <Route path="movies" element={<MovieList movies={movies} />} />
 
             <Route path="/" element={<Navigate to="/movies" />} />
+            <Route path="movies/add" element={<AddMovieForm  setMovies={setMovies}/>} />
           </Routes>
         </div>
       </div>
